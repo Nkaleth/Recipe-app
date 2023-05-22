@@ -31,4 +31,5 @@
 /config/master.key
 /config/database.yml
 /Gemfile
+/node_modules
 
