@@ -30,6 +30,6 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /config/database.yml
-/gemfiles
-/node_modules
+Gemfile
+./node_modules
 .ruby-version
