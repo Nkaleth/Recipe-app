@@ -82,36 +82,19 @@ Clone this repository to your desired folder:
 
 ### Install
 
-Install thr project dependencies with:
+- bundle install
 
-```
-  bundle install
-```
-
-### Usage <a name="usage"></a>
+### Usage
 
 To run the project, execute the following command:
 
-```
+```sh
+  rails db:drop
+  rails db:create
+  rails db:migrate
+  rails db:seed
   rails server
 ```
-
-### Run tests
-
-To run all tests, including unit and integration tests, run the following command:
-
-```
-  rspec
-```
-
-### Deployment
-
-You can deploy this project using:
-
-```
-  N/A
-```
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
