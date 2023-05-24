@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
   def index
-    puts 'Nothing!'
+    puts @user_foods = current_user.foods
   end
 end
