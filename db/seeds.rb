@@ -8,3 +8,4 @@ first_food = Food.create!(user_id: first_user.id, name: 'Onion', measurement_uni
 second_food = Food.create!(user_id: first_user.id, name: 'Milk', measurement_unit: 'ml', price: 0.5, quantity: 80)
 third_food = Food.create!(user_id: second_user.id, name: 'Vegetable Oil', measurement_unit: 'tablespoon', price: 0.2, quantity: 2)
 fourth_food = Food.create!(user_id: second_user.id, name: 'Chicken stock', measurement_unit: 'cup', price: 0.5, quantity: 0.25)
+fifth_food = Food.create!(user_id: second_user.id, name: 'Cloves Garlic', measurement_unit: 'units', price: 0.1, quantity: 2)
