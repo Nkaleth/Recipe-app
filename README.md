@@ -77,22 +77,27 @@ Clone this repository to your desired folder:
 
 ```
   git clone https://github.com/Nkaleth/Recipe-app.git
-  cd Blog_app
+  cd Recipe-app
 ```
 
 ### Install
 
-- bundle install
+```sh
+  bundle install
+```
+```sh
+  npm install
+```
+```sh
+  rails css:install:bootstrap
+```
 
 ### Usage
 
 To run the project, execute the following command:
 
 ```sh
-  rails db:drop
-  rails db:create
-  rails db:migrate
-  rails db:seed
+  rake db:drop db:create db:migrate db:seed
   rails server
 ```
 
