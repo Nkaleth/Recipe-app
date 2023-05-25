@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :foods, only: [:index]
 
+  get 'general_shopping_list', to: 'pages#general_shopping_list'
+  get 'public_recipes', to: 'pages#public_recipes'
   # Defines the root path route ("/")
   root "foods#index"
 
