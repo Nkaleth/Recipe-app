@@ -1,20 +1,29 @@
-<div class="recipes-container">
-  <h1>Recipes</h1>
+
+<div class="container d-flex justify-content-center mb-5" >
+<%= link_to "Add Recipe", new_recipe_path(), class: "btn btn-primary" %>
+</div>
+<table class="table table-striped table-bordered  w-50">
+<thead>
+  <tr>
+    <th scope="col">Recipe</th>
+    <th scope="col">Preparation Time</th>
+    <th scope="col">Cook Time</th>
+    <th scope="col">Public</th>
+    <th scope="col">Actions</th>
+  </tr>
+</thead>
+<tbody class="table-group-divider">
     <% @recipes.each do |recipe| %>
-      <div class="recipes_title">
-        <h2 class="recipe_name"><%= recipe.name %></h2>
-      </div>
-      <div class="recipes_features">
-      <p class="recipe_desc"><%= truncate(recipe.description, length: 40, omission: "...") %></p> 
-      
-      <div class="list_btn">
-        <button type="button" class="remove_btn btn"><%= link_to "Delete", recipe_path(id: recipe.id), data: { turbo_method: :delete } %></button>
-        <button type="button" class="details btn"><%= link_to "Details", recipe_path(id: recipe.id) %></button>
-      </div>
-      </div>
-    <% end %>
-    <div class="list_btn">
-      <button class="recipe_btn"><%= link_to "Add Recipe", new_user_recipe_path %></button>
-    </div>
-  </div>
-  
+    <tr>
+    <td><%= recipe.name %></td>
+    <td><%= recipe.prep_time %></td>
+    <td><%= recipe.cook_time %></td>
+    <td><%= recipe.public ? "public":"private" %></td>
+    <td class="d-flex  justify-content-center " > 
+      <%= button_to 'Edit', user_food_path(current_user, recipe), method: :edit, class: "btn btn-warning" %> 
+      <%= button_to 'Delete', user_food_path(current_user, recipe), method: :delete, class: "btn btn-danger" %> 
+    </td>
+    </tr>
+    <% end %>  
+</tbody>
+</table>

@@ -4,6 +4,6 @@ class Recipe < ApplicationRecord
 
   validates :name, presence: true, length: { in: 2..250 }
   validates :description, presence: true
-  validates :preparation_time, presence: true, numericality: { only_float: true, greater_than_or_equal_to: 0 }
-  validates :cooking_time, presence: true, numericality: { only_float: true, greater_than_or_equal_to: 0 }
+  validates :prep_time, presence: true, numericality: { only_float: true, greater_than_or_equal_to: 0 }
+  validates :cook_time, presence: true, numericality: { only_float: true, greater_than_or_equal_to: 0 }
 end
