@@ -15,13 +15,14 @@
 <tbody class="table-group-divider">
     <% @recipes.each do |recipe| %>
     <tr>
-    <td><%= recipe.name %></td>
+    <td>
+      <%= link_to recipe.name , recipe_path(id: recipe.id)%>
+    </td>
     <td><%= recipe.prep_time %></td>
     <td><%= recipe.cook_time %></td>
-    <td><%= recipe.public ? "public":"private" %></td>
+    <td><%=  recipe.public ?  "public" : "private" %></td>
     <td class="d-flex  justify-content-center " > 
-      <%= button_to 'Edit', user_food_path(current_user, recipe), method: :edit, class: "btn btn-warning" %> 
-      <%= button_to 'Delete', user_food_path(current_user, recipe), method: :delete, class: "btn btn-danger" %> 
+      <%= button_to 'Delete', recipe_path(id: recipe.id), method: :delete, class: "btn btn-danger" %> 
     </td>
     </tr>
     <% end %>  
