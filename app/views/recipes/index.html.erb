@@ -1,1 +1,30 @@
-<h1>Recipes List</h1>
+
+<div class="container d-flex justify-content-center mb-5" >
+<%= link_to "Add Recipe", new_recipe_path(), class: "btn btn-primary" %>
+</div>
+<table class="table table-striped table-bordered  w-50">
+<thead>
+  <tr>
+    <th scope="col">Recipe</th>
+    <th scope="col">Preparation Time</th>
+    <th scope="col">Cook Time</th>
+    <th scope="col">Public</th>
+    <th scope="col">Actions</th>
+  </tr>
+</thead>
+<tbody class="table-group-divider">
+    <% @recipes.each do |recipe| %>
+    <tr>
+    <td>
+      <%= link_to recipe.name , recipe_path(id: recipe.id)%>
+    </td>
+    <td><%= recipe.prep_time %></td>
+    <td><%= recipe.cook_time %></td>
+    <td><%=  recipe.public ?  "public" : "private" %></td>
+    <td class="d-flex  justify-content-center " > 
+      <%= button_to 'Delete', recipe_path(id: recipe.id), method: :delete, class: "btn btn-danger" %> 
+    </td>
+    </tr>
+    <% end %>  
+</tbody>
+</table>

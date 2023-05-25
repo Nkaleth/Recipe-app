@@ -1,0 +1,26 @@
+
+<div class="recipe_display_container">
+  <h2 class="recipe_name"><%= @recipe.name %></h2>	
+  <div class="duo_space_between inline">
+    <span class=" right">
+      Preparation time:  <%= @recipe.prep_time %> hours
+    </span>
+    <span class=" left inline">
+      <span>Public </span><div class="<%=  @recipe.public ?  "statut green" : " statut red" %>"></div>
+    </span>
+  </div>
+
+  <span class="text_display">Cooking time : <%=  @recipe.cook_time %> Hours</span>
+  <span class="text_display"><%=  @recipe.description %></span>
+  <div class="duo_space_between">
+   
+    <%= button_to 'Generate shopping list', recipe_path(id: @recipe.id), method: :delete, class: "cbtn right disabled"%> 
+    <%= button_to 'Add Ingredient', recipe_path(id: @recipe.id), method: :delete, class: "cbtn" %> 
+  </div>
+  <div class="separator"></div>
+  <div class="display_recipe_ingredients">
+    <table class="data_table">
+      
+    </table>
+  </div>
+</div>
