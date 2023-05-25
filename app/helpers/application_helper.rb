@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def active?(action)
-    params[:action] == action ? 'nav-link active' : 'nav-link'
+  def active?(path)
+    current_page?(path) ? 'nav-link active' : 'nav-link'
   end
 end
