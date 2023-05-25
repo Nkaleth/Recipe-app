@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+<<<<<<< HEAD
   #load_and_authorize_resource
 
   before_action :find_user
@@ -58,4 +59,6 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(:name, :ingredients, :description, :prep_time, :cook_time)
   end
+=======
+>>>>>>> dev
 end
