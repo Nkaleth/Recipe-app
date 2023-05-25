@@ -14,9 +14,10 @@
           <a class="nav-link" href="#">Recipes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Public Recipes</a>
+            <%= link_to "Public Recipes", public_recipes_path, class: active?('foods') %>
         </li>
         <li class="nav-item">
+          general_shopping_list_path
           <a class="nav-link disabled">Shopping List</a>
         </li>
       </ul>

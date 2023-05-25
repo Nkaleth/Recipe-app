@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
 
   def public_recipes
-    @public_recipes = current_user.recipes.find(public: true)
+    puts 'Here should be a method'
   end
 end
