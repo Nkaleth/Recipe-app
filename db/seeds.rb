@@ -15,7 +15,7 @@ fifth_food = Food.create!(user_id: second_user.id, name: 'Cloves Garlic', measur
 
 # Recipe: Ají de Gallina
 
-first_recipe = Recipe.create!(user_id: first_user.id, name: 'Ají de Gallina', prep_time: 60, cook_time: 45, public: false)
+first_recipe = Recipe.create!(user_id: first_user.id, name: 'Ají de Gallina', description: 'A favorite Peruvian chicken recipe of creamy, spicy sauce made with shredded chicken or hen, aji amarillo chili peppers, minced garlic, pecan nuts, parmesan, hard boiled eggs, and bread crumbs. All served over rice with a few slices of boiled potatoes.', prep_time: 60, cook_time: 45, public: false)
 
 # Recipe foods: Ají de Gallina
 
