@@ -1,10 +1,10 @@
-<div class="recipes-container">
+<div class="recipes_container">
   <h1>Recipes</h1>
     <% @recipes.each do |recipe| %>
-      <div class="recipes-title">
+      <div class="recipes_title">
         <h2 class="recipe_name"><%= recipe.name %></h2>
       </div>
-      <div class="recipes-features">
+      <div class="recipes_features">
       <p class="recipe_desc"><%= truncate(recipe.description, length: 40, omission: "...") %></p> 
       
       <div class="list_btn">
