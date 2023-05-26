@@ -10,7 +10,6 @@
       <th scope="col">Preparation Time</th>
       <th scope="col">Cook Time</th>
       <th scope="col">Public</th>
-      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody class="table-group-divider">
@@ -23,9 +22,6 @@
       <td><%= recipe.prep_time %></td>
       <td><%= recipe.cook_time %></td>
       <td><%=  recipe.public ?  "public" : "private" %></td>
-      <td class="d-flex  justify-content-center " > 
-        <%= button_to 'Delete', recipe_path(id: recipe.id), method: :delete, class: "btn btn-danger" %> 
-      </td>
       </tr>
       <% end %>  
   </tbody>
