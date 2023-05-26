@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
   # GET /recipes/:id
   def show
     @recipe = Recipe.find(params[:id])
-    @recipe_foods = @recipe.recipe_foods.all
+    @recipe_foods = @recipe.recipe_foods.includes(:food)
   end
 
   # GET /recipes/new

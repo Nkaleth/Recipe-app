@@ -12,7 +12,7 @@
             <%= link_to "Foods", user_foods_path(current_user), class: active?(user_foods_path(current_user)) %>
           </li>
           <li class="nav-item">
-          <%= link_to "Recipes", user_recipes_path(current_user), class: active?(user_recipes_path(current_user)) %>
+          <%= link_to "Recipes", recipes_path(current_user), class: active?(recipes_path(current_user)) %>
           </li>
           <li class="nav-item">
             <%= link_to "Public Recipes", public_recipes_path, class: active?(public_recipes_path) %>

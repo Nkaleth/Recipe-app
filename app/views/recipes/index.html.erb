@@ -6,6 +6,7 @@
 <thead>
   <tr>
     <th scope="col">Recipe</th>
+    <th scope="col">Description</th>
     <th scope="col">Preparation Time</th>
     <th scope="col">Cook Time</th>
     <th scope="col">Public</th>
@@ -18,6 +19,7 @@
     <td>
       <%= link_to recipe.name , recipe_path(id: recipe.id)%>
     </td>
+    <td><%= recipe.description %></td>
     <td><%= recipe.prep_time %></td>
     <td><%= recipe.cook_time %></td>
     <td><%=  recipe.public ?  "public" : "private" %></td>
