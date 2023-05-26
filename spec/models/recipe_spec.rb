@@ -48,7 +48,7 @@ RSpec.describe Recipe, type: :model do
   describe 'associations' do
     it 'belongs to user' do
       user = User.new
-      recipe = Recipe.new(user: user)
+      recipe = Recipe.new(user:)
       expect(recipe.user).to eq(user)
     end
 
