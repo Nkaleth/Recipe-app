@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'public_recipes/index'
 
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -11,9 +12,9 @@ Rails.application.routes.draw do
   resources :recipes
 
   resources :foods, only: [:index]
+  resources :public_recipes, only: [:index]
 
   get 'general_shopping_list', to: 'pages#general_shopping_list'
-  get 'public_recipes', to: 'pages#public_recipes'
   # Defines the root path route ("/")
   root "foods#index"
 
