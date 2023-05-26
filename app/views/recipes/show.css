@@ -1,0 +1,74 @@
+.recipe_display_container {
+  max-width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  padding: 2em;
+  gap: 1em;
+  font-size: large;
+}
+
+.recipe_name {
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.duo_space_between {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.text_display {
+  width: 80%;
+}
+
+.btn {
+  border: 2px solid black;
+  font-weight: bolder;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: white;
+  box-shadow: black 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0 3px 7px -3px;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.disabled:hover {
+  background-color: white !important;
+  color: inherit !important;
+}
+
+.statut {
+  height: 15px;
+  width: 15px;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+.inline {
+  display: flex;
+}
+
+.green {
+  background-color: green;
+}
+
+.separator {
+  width: 80%;
+  height: 2px;
+  background-color: black;
+}
+
+.form_selectbox {
+  width: 100%;
+}
