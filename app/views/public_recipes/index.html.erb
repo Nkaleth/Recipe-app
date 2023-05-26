@@ -15,13 +15,19 @@
   </thead>
   <tbody class="table-group-divider">
       <% @public_recipes.each do |recipe| %>
+      <%items_cpt = 0 %>
+      <%price_total = 0 %>
+      <% recipe.recipe_foods.each do |recipe_food| %>
+        <%items_cpt += 1 %>
+        <%price_total += recipe_food.quantity * recipe_food.food.price %>
+      <% end %>
       <tr>
       <td>
         <%= link_to recipe.name , recipe_path(id: recipe.id)%>
       </td>
       <td><%= recipe.description %></td>
-      <td><%= recipe.prep_time %></td>
-      <td>$<%= recipe.cook_time %></td>
+      <td><%= items_cpt %></td>
+      <td>$<%= price_total.round(2) %></td>
       <td><%=  recipe.public ?  "public" : "private" %></td>
         <%if recipe.user_id == @user.id %>
       <td class="d-flex  justify-content-center " > 
