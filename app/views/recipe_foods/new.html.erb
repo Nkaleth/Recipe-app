@@ -3,38 +3,22 @@
 <% if flash[:error] %>
   <div class="alert alert-danger"><%= flash[:error] %></div>
 <% end %>
-<%= form_with model: @recipe_food,  method:"post" ,url: recipe_recipe_foods_path(recipe_id: @recipe_food.recipe_id), local: true, html: { class: 'form-horizontal p-5 w-30' } do |form| %>
+<%= form_with model: @recipe_food,  method:"post", url: recipe_foods_path(recipe_id: params["recipe_id"]) , html: { class: 'form-horizontal p-5 w-30' } do |form| %>
   <div class="form-group">
     <%= form.label :name, class: 'form-label' %>
     <div class="mb-3">
-      <%= form.text_field :name, class: 'form-control' %>
+      <%= form.select :food_id, @foods.map { |food| [food.name, food.id]} ,style: "width: 100%" %>
     </div>
   </div>
   <div class="form-group">
-    <%= form.label :description, class: 'form-label' %>
+    <%= form.label :quantity, 'preparation time',class: 'form-label' %>
     <div class="mb-3">
-      <%= form.text_area :description, class: 'form-control' %>
+      <%= form.number_field :quantity, step: 0.1, autofocus: true %>
     </div>
-  </div>
-  <div class="form-group">
-    <%= form.label :prep_time, 'preparation time',class: 'form-label' %>
-    <div class="mb-3">
-      <%= form.number_field :prep_time, step: 0.5, autofocus: true %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= form.label :cook_time, 'Cooking time',class: 'form-label' %>
-    <div class="mb-3">
-      <%= form.number_field :cook_time, step: 0.5, autofocus: true %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= form.label :public, "Do you want to make it public?" ,class: 'form-label'%>
-      <%= form.check_box :public, autofocus: true %>
   </div>
   <div class="form-group">
     <div class="d-flex justify-content-center">
-      <%= form.submit class: 'btn btn-primary mt-4' %>
+      <%= form.submit "Add to Recipe", class: 'btn btn-primary mt-4' %>
     </div>
   </div>
 <% end %>
