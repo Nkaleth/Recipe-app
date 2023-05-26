@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   def shopping_list(recipe)
     # Get the user's food list as a hash list with id as a key and quantity as a value
-    user_foods = self.foods.pluck(:id, :quantity).to_h
+    user_foods = foods.pluck(:id, :quantity).to_h
     # Get the recipe's recipe_foods as a hash list
     recipe_foods = recipe.recipe_foods.pluck(:food_id, :quantity).to_h
     # Calculating the difference in quantity for each food
