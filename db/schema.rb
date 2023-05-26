@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_153837) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "user_avatar", default: "/assets/user_avatar-svgrepo-com.svg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
