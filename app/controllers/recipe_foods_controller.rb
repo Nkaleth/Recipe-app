@@ -11,17 +11,15 @@ class RecipeFoodsController < ApplicationController
     @recipe_food.recipe_id = params[:recipe_id]
     if @recipe_food.save
       redirect_to recipe_path(id: @recipe_food.recipe_id), notice: 'Recipe Food created successfully'
-    else
-      flash.now[:alert] = @recipe_food.errors.full_messages.first if @recipe_food.errors.any?
-      #render :new, status: 400
+    elsif @recipe_food.errors.any?
+      flash.now[:alert] = @recipe_food.errors.full_messages.first
     end
+    # render :new, status: 400
   end
 
-  def edit
-  end
+  def edit; end
 
-  def update
-  end
+  def update; end
 
   def destroy
     @recipe_food = RecipeFood.find(params[:id])
