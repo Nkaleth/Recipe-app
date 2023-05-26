@@ -22,7 +22,7 @@ class User < ApplicationRecord
     # Build the result table
     result = []
     difference.each do |food_id, quantity_difference|
-      next if quantity_difference.negative? # Skip foods with a negative quantity_difference value
+      next if quantity_difference <= 0 # Skip foods with a negative or 0 quantity_difference value
 
       food = foods[food_id]
       result << {
