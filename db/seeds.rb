@@ -17,7 +17,15 @@ fifth_food = Food.create!(user_id: second_user.id, name: 'Cloves Garlic', measur
 
 first_recipe = Recipe.create!(user_id: first_user.id, name: 'Ají de Gallina', description: 'A favorite Peruvian chicken recipe of creamy, spicy sauce made with shredded chicken or hen, aji amarillo chili peppers, minced garlic, pecan nuts, parmesan, hard boiled eggs, and bread crumbs. All served over rice with a few slices of boiled potatoes.', prep_time: 60, cook_time: 45, public: false)
 
+# Recipe: Potato Huancaina's Style
+
+second_recipe = Recipe.create!(user_id: first_user.id, name: 'Potato Huancaina Style', description: 'A favorite Peruvian chicken recipe of creamy, spicy sauce made with...', prep_time: 60, cook_time: 45, public: false)
+
 # Recipe foods: Ají de Gallina
 
 first_recipe_food = RecipeFood.create!(recipe_id: first_recipe.id, food_id: first_food.id, quantity: 1)
 second_recipe_food = RecipeFood.create!(recipe_id: first_recipe.id, food_id: second_food.id, quantity: 80)
+
+# Recipe foods: Potato Huancaina's Style
+
+third_recipe_food = RecipeFood.create!(recipe_id: second_recipe.id, food_id: second_food.id, quantity: 20)
