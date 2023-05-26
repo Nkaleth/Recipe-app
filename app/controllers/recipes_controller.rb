@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   before_action :find_user
   # GET /recipes
   def index
-    @recipes = @user.recipes.all
+    @recipes = @user.recipes.includes(:recipe_foods).all
   end
 
   # GET /recipes/:id

@@ -13,9 +13,10 @@
   <span class="text_display">Cooking time : <%=  @recipe.cook_time %> Hours</span>
   <span class="text_display"><%=  @recipe.description %></span>
   <div class="duo_space_between">
-   
+   <%if current_user.id == @recipe.user_id%>
     <%= link_to 'Generate shopping list', general_shopping_list_path(recipe_id: @recipe.id), class: "btn cbtn"%>
-    <%= button_to 'Add Ingredient', new_recipe_food_path(user_id:@recipe.user_id ,recipe_id: @recipe.id), method: :get, class: "btn cbtn" %> 
+   <%= button_to 'Add Ingredient', new_recipe_food_path(user_id:@recipe.user_id ,recipe_id: @recipe.id), method: :get, class: "btn cbtn" %> 
+    <%end%>
   </div>
   <div class="separator"></div>
     <table class="table table-striped table-bordered  w-100">
@@ -24,17 +25,21 @@
           <th scope="col">Food</th>
           <th scope="col">Quantity</th>
           <th scope="col">Value</th>
+          <%if current_user.id == @recipe.user_id%>
           <th scope="col">Actions</th>
+          <%end%>
         </tr>
       </thead>
       <tbody class="table-group-divider">
           <% @recipe_foods.each do |fd| %>
           <tr>
           <td><%= fd.food.name %></td>
-          <td><%= fd.quantity %></td>
-          <td>$<%= fd.food.price * fd.quantity %></td>
+          <td><%= fd.quantity %><%=fd.food.measurement_unit%></td>
+          <td>$<%= (fd.food.price * fd.quantity).round(2) %></td>
+          <%if current_user.id == @recipe.user_id%>
           <td class="d-flex  justify-content-center" > <%= button_to 'Delete',  recipe_food_path(recipe_id: @recipe.id, id: fd.id), method: :delete, class: "btn btn-danger" %> </td>
-          </tr>
+          <%end%>
+        </tr>
           <% end %>  
       </tbody>
     </table>
