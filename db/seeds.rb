@@ -20,3 +20,4 @@ first_recipe = Recipe.create!(user_id: first_user.id, name: 'Ají de Gallina', d
 # Recipe foods: Ají de Gallina
 
 first_recipe_food = RecipeFood.create!(recipe_id: first_recipe.id, food_id: first_food.id, quantity: 1)
+second_recipe_food = RecipeFood.create!(recipe_id: first_recipe.id, food_id: second_food.id, quantity: 80)

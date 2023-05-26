@@ -14,7 +14,7 @@
   <span class="text_display"><%=  @recipe.description %></span>
   <div class="duo_space_between">
    
-    <%= link_to 'Generate shopping list', general_shopping_list_path, class: "btn cbtn"%> 
+    <%= link_to 'Generate shopping list', general_shopping_list_path(recipe_id: @recipe.id), class: "btn cbtn"%> 
     <%= button_to 'Add Ingredient', recipe_path(id: @recipe.id), method: :delete, class: "btn cbtn" %> 
   </div>
   <div class="separator"></div>

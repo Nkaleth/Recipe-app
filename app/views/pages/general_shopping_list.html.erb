@@ -3,6 +3,26 @@
   <h3 class="w-10">Amount of food items to buy: <%= '3' %> </h3>
   <h3 class="w-10" >Total Value of food needed: <%= '819' %>$ </h3>
 </div>
+
+<table class="table table-striped table-bordered  w-50">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+      <% @recipe.recipe_foods.each do |food| %>
+      <tr>
+      <td><%= food.name %></td>
+      <td><%= food.quantity %> <%= food.measurement_unit %> </td>
+      <td><%= food.price %></td>
+      </tr>
+      <% end %>  
+  </tbody>
+</table>
+
 <table class="table table-striped table-bordered  w-50">
   <thead>
     <tr>

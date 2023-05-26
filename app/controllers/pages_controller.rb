@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def general_shopping_list
-    @recipes = current_user.recipes
+    @recipe = Recipe.includes(:recipe_foods).find(params[:recipe_id])
     @foods = current_user.foods
   end
 
