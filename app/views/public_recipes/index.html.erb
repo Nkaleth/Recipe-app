@@ -5,6 +5,7 @@
   <table class="table table-striped table-bordered  w-50">
   <thead>
     <tr>
+      <th scope="col">Author</th>
       <th scope="col">Recipe</th>
       <th scope="col">Description</th>
       <th scope="col">Total Items</th>
@@ -22,6 +23,9 @@
         <%price_total += recipe_food.quantity * recipe_food.food.price %>
       <% end %>
       <tr>
+        <td>
+          <%= recipe.user.name %>
+        </td>
       <td>
         <%= link_to recipe.name , recipe_path(id: recipe.id)%>
       </td>
