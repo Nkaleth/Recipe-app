@@ -25,7 +25,7 @@ RSpec.describe Food, type: :model do
 
     it 'belongs to user' do
       user = User.new
-      food = Food.new(user: user)
+      food = Food.new(user:)
       expect(food.user).to eq(user)
     end
   end
