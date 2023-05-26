@@ -16,7 +16,7 @@
   </thead>
   <tbody class="table-group-divider">
       <% @user_foods.each do |food| %>
-      <tr>
+      <tr id="food_<%= food.id %>">
       <td><%= food.name %></td>
       <td><%= food.price %></td>
       <td><%= food.quantity %></td>
