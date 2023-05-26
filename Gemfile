@@ -5,8 +5,8 @@ ruby '3.2.0'
 
 # Devise for login page and registration
 
-gem 'devise'
 gem 'cancancan'
+gem 'devise'
 
 # Bootstrap
 gem 'bootstrap', '~> 5.2.0'
