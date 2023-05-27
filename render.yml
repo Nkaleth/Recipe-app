@@ -1,0 +1,6 @@
+services:
+- type: web
+  env: ruby
+  envVars:
+  - key: RUBY_VERSION
+    value: 3.2.2
