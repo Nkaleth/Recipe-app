@@ -1,0 +1,38 @@
+
+<div class="container d-flex justify-content-center mb-5" >
+<%= link_to "Add Recipe", new_recipe_path(), class: "btn btn-primary" %>
+</div>
+<table class="table table-striped table-bordered  w-50">
+<thead>
+  <tr>
+    <th scope="col">Recipe</th>
+    <th scope="col">Description</th>
+    <th scope="col">Total Items</th>
+    <th scope="col">Total Price</th>
+    <th scope="col">Public</th>
+    <th scope="col">Actions</th>
+  </tr>
+</thead>
+<tbody class="table-group-divider">
+    <% @recipes.each do |recipe| %>
+    <%items_cpt = 0 %>
+    <%price_total = 0 %>
+    <% recipe.recipe_foods.each do |recipe_food| %>
+      <%items_cpt += 1 %>
+      <%price_total += recipe_food.quantity * recipe_food.food.price %>
+    <% end %>
+    <tr>
+    <td>
+      <%= link_to recipe.name , recipe_path(id: recipe.id)%>
+    </td>
+    <td><%= recipe.description %></td>
+    <td><%= items_cpt %></td>
+    <td>$<%= price_total.round(2) %></td>
+    <td><%=  recipe.public ?  "public" : "private" %></td>
+    <td class="d-flex  justify-content-center " > 
+      <%= button_to 'Delete', recipe_path(id: recipe.id), method: :delete, class: "btn btn-danger" %> 
+    </td>
+    </tr>
+    <% end %>  
+</tbody>
+</table>
