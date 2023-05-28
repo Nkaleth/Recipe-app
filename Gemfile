@@ -87,3 +87,7 @@ end
 gem 'cssbundling-rails', '~> 1.1'
 
 gem 'jsbundling-rails', '~> 1.1'
+
+gem 'dockerfile-rails', '>= 1.4', group: :development
+
+gem 'redis', '~> 5.0'
